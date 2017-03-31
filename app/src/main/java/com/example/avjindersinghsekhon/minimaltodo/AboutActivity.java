@@ -30,11 +30,9 @@ public class AboutActivity extends AppCompatActivity {
 
         theme = getSharedPreferences(MainActivity.THEME_PREFERENCES, MODE_PRIVATE).getString(MainActivity.THEME_SAVED, MainActivity.LIGHTTHEME);
         if(theme.equals(MainActivity.DARKTHEME)){
-            Log.d("OskarSchindler", "One");
             setTheme(R.style.CustomStyle_DarkTheme);
         }
         else{
-            Log.d("OskarSchindler", "One");
             setTheme(R.style.CustomStyle_LightTheme);
         }
 
@@ -63,7 +61,8 @@ public class AboutActivity extends AppCompatActivity {
         toolbar = (Toolbar)findViewById(R.id.toolbar);
         contactMe = (TextView)findViewById(R.id.aboutContactMe);
 
-        contactMe.setOnClickListener(new View.OnClickListener() {
+        contactMe.setOnClickListener(
+                new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 app.send(this, "Action", "Feedback");
